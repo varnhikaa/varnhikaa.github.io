@@ -124,10 +124,10 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.85);
 }
 
-.modal img {
+.modal-content {
   display: block;
   margin: auto;
   max-width: 90%;
@@ -135,8 +135,14 @@ footer {
   border-radius: 10px;
 }
 
-.modal:target {
-  display: block;
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
 }
 </style>
 </head>
@@ -162,161 +168,128 @@ footer {
   <h2>Projects</h2>
   <div class="projects">
 
-    <!-- GrowVIE -->
     <div class="card">
-      <h3>GrowVIE</h3>
+  <h3>GrowVIE</h3>
+  <img src="Picture2.png">
+  <img src="Picture8.png">
+  <p>Interactive web application promoting sustainability through gamified environmental actions.</p>
+  <span class="tag">HTML • CSS • JS</span>
+</div>
 
-      <a href="#img1"><img src="Picture2.png"></a>
-      <a href="#img2"><img src="Picture8.png"></a>
+<div class="card">
+  <h3>User Persona Development</h3>
+  <img src="Picture6.png">
+  <img src="Picture7.png">
+  <p>Conducted user research and developed personas to guide design decisions.</p>
+  <span class="tag">UI/UX</span>
+</div>
 
-      <p>Interactive web application promoting sustainability through gamified environmental actions.</p>
-      <span class="tag">HTML • CSS • JS</span>
-    </div>
+<div class="card">
+  <h3>UI/UX Website Redesign</h3>
+  <img src="Picture5.png">
+  <img src="Picture1.png">
+  <p>Redesigned a website to improve usability, layout, and visual identity.</p>
+  <p><a href="https://www.figma.com/proto/r8VPSAFFF6r9yaz5Icp4YT/Discount-Beds-Belfast---high-fidelity--Copy-?node-id=0-1&t=OraUeji36ttShCab-1" target="_blank">View Prototype</a></p>
+  <span class="tag">UI/UX • Figma</span>
+</div>
 
-    <!-- Persona -->
-    <div class="card">
-      <h3>User Persona Development</h3>
-
-      <a href="#img3"><img src="Picture6.png"></a>
-      <a href="#img4"><img src="Picture7.png"></a>
-
-      <p>Conducted user research and developed personas to guide design decisions.</p>
-      <span class="tag">UI/UX</span>
-    </div>
-
-    <!-- UIUX -->
-    <div class="card">
-      <h3>UI/UX Website Redesign</h3>
-
-      <a href="#img5"><img src="Picture5.png"></a>
-      <a href="#img6"><img src="Picture1.png"></a>
-
-      <p>Redesigned a website to improve usability, layout, and visual identity.</p>
-      <p><a href="https://www.figma.com/proto/r8VPSAFFF6r9yaz5Icp4YT/Discount-Beds-Belfast---high-fidelity--Copy-?node-id=0-1&t=OraUeji36ttShCab-1" target="_blank">View Prototype</a></p>
-      <span class="tag">UI/UX • Figma</span>
-    </div>
-
-    <div class="card">
-      <h3>Tuition Management System</h3>
-
-      <a href="#img7"><img src="Picture3.png"></a>
-      <a href="#img8"><img src="Picture4.png"></a>
-
-      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
-      <span class="tag">Java</span>
-    </div>
-
-    <div class="card">
-      <h3>Tuition Management System</h3>
-
-      <a href="#img7"><img src="Picture3.png"></a>
-      <a href="#img8"><img src="Picture4.png"></a>
-
-      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
-      <span class="tag">Java</span>
-    </div>
-
-  </div>
+<div class="card">
+  <h3>Tuition Management System</h3>
+  <img src="Picture3.png">
+  <img src="Picture4.png">
+  <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
+  <span class="tag">Java</span>
+</div>
 </section>
 
 <section>
   <h2>Creative Works</h2>
   <div class="projects">
 
-    <!-- Freelance Poster -->
     <div class="card">
-      <h3>Freelance Poster Design</h3>
-      <a href="#img9"><img src="Picture9.png"></a>
-      <a href="#img10"><img src="Picture10.png"></a>
-      <a href="#img11"><img src="Picture11.png"></a>
-      <p>Designed promotional posters for an international primary school science competition, focusing on clarity and visual appeal.</p>
-      <span class="tag">Canva • Design</span>
-    </div>
+  <h3>Freelance Poster Design</h3>
+  <img src="Picture9.png">
+  <img src="Picture10.png">
+  <img src="Picture11.png">
+  <p>Designed promotional posters for an international primary school science competition, focusing on clarity and visual appeal.</p>
+  <span class="tag">Canva • Design</span>
+</div>
 
-    <!-- Freelance Brochure -->
-    <div class="card">
-      <h3>Freelance Brochure Design</h3>
-      <a href="#img27"><img src="Picture27.png"></a>
-      <a href="#img28"><img src="Picture28.png"></a>
-      <p>Created informative brochures with structured layout and engaging visuals.</p>
-      <span class="tag">Canva • Layout</span>
-    </div>
+<div class="card">
+  <h3>Freelance Brochure Design</h3>
+  <img src="Picture27.png">
+  <img src="Picture28.png">
+  <p>Created informative brochures with structured layout and engaging visuals.</p>
+  <span class="tag">Canva • Layout</span>
+</div>
 
-    <!-- ICN Poster -->
-    <div class="card">
-      <h3>ICN Poster Design</h3>
-      <a href="#img23"><img src="Picture23.png"></a>
-      <p>Designed promotional materials for event marketing and audience engagement.</p>
-      <span class="tag">Canva</span>
-    </div>
+<div class="card">
+  <h3>ICN Poster Design</h3>
+  <img src="Picture23.png">
+  <p>Designed promotional materials for event marketing and audience engagement.</p>
+  <span class="tag">Canva</span>
+</div>
 
-    <!-- ICN GIF -->
-    <div class="card">
-      <h3>Marketing GIF</h3>
-      <a href="#img22"><img src="Picture22.png"></a>
-      <p>Developed animated marketing content to enhance engagement across platforms.</p>
-      <span class="tag">Canva • GIF</span>
-    </div>
+<div class="card">
+  <h3>Marketing GIF</h3>
+  <img src="Picture22.gif">
+  <p>Developed animated marketing content to enhance engagement across platforms.</p>
+  <span class="tag">Canva • GIF</span>
+</div>
 
-    <!-- Social Posts -->
-    <div class="card">
-      <h3>Social Media Design – Serena Williams</h3>
-      <a href="#img20"><img src="Picture20.png"></a>
-      <p>Designed impactful content highlighting achievements and visual storytelling.</p>
-      <span class="tag">Canva • Social Media</span>
-    </div>
+<div class="card">
+  <h3>Social Media Design – Serena Williams</h3>
+  <img src="Picture20.png">
+  <p>Designed impactful content highlighting achievements and visual storytelling.</p>
+  <span class="tag">Canva • Social Media</span>
+</div>
 
-    <div class="card">
-      <h3>Social Media Design – Wangari Maathai</h3>
-      <a href="#img21"><img src="Picture21.png"></a>
-      <p>Created awareness-focused visual content using strong messaging and layout.</p>
-      <span class="tag">Canva • Social Media</span>
-    </div>
+<div class="card">
+  <h3>Social Media Design – Wangari Maathai</h3>
+  <img src="Picture21.png">
+  <p>Created awareness-focused visual content using strong messaging and layout.</p>
+  <span class="tag">Canva • Social Media</span>
+</div>
 
-    <div class="card">
-      <h3>Social Media Design (General)</h3>
-      <a href="#img18"><img src="Picture18.png"></a>
-      <a href="#img19"><img src="Picture19.png"></a>
-      <p>Produced engaging social media posts to support campaigns and outreach.</p>
-      <span class="tag">Canva</span>
-    </div>
+<div class="card">
+  <h3>Social Media Design (General)</h3>
+  <img src="Picture18.png">
+  <img src="Picture19.png">
+  <p>Produced engaging social media posts to support campaigns and outreach.</p>
+  <span class="tag">Canva</span>
+</div>
 
-    <!-- Calendar -->
-    <div class="card">
-      <h3>Digital Calendar (2026)</h3>
-      <a href="#img12"><img src="Picture12.png"></a>
-      <a href="#img13"><img src="Picture13.png"></a>
-      <p>Designed two versions of a digital calendar for fundraising with clean layout and usability.</p>
-      <span class="tag">Canva • Product Design</span>
-    </div>
+<div class="card">
+  <h3>Digital Calendar (2026)</h3>
+  <img src="Picture12.png">
+  <img src="Picture13.png">
+  <p>Designed two versions of a digital calendar for fundraising with clean layout and usability.</p>
+  <span class="tag">Canva • Product Design</span>
+</div>
 
-    <!-- UIUX Branding -->
-    <div class="card">
-      <h3>Logo Redesign & Branding</h3>
-      <a href="#img24"><img src="Picture24.png"></a>
-      <a href="#img25"><img src="Picture25.png"></a>
-      <a href="#img26"><img src="Picture26.png"></a>
-      <p>Redesigned branding elements to improve identity consistency and visual appeal.</p>
-      <span class="tag">UI/UX • Branding</span>
-    </div>
+<div class="card">
+  <h3>Logo Redesign & Branding</h3>
+  <img src="Picture24.png">
+  <img src="Picture25.png">
+  <img src="Picture26.png">
+  <p>Redesigned branding elements to improve identity consistency and visual appeal.</p>
+  <span class="tag">UI/UX • Branding</span>
+</div>
 
-    <!-- Fundraising -->
-    <div class="card">
-      <h3>Fundraising Menu Poster</h3>
-      <a href="#img16"><img src="Picture16.png"></a>
-      <p>Designed menu poster with clear structure and pricing layout.</p>
-      <span class="tag">Canva</span>
-    </div>
+<div class="card">
+  <h3>Fundraising Menu Poster</h3>
+  <img src="Picture16.png">
+  <p>Designed menu poster with clear structure and pricing layout.</p>
+  <span class="tag">Canva</span>
+</div>
 
-    <div class="card">
-      <h3>Fundraising Logo Design</h3>
-      <a href="#img14"><img src="Picture14.png"></a>
-      <a href="#img15"><img src="Picture15.png"></a>
-      <p>Created simple and recognizable branding for fundraising initiative.</p>
-      <span class="tag">Canva • Branding</span>
-    </div>
-
-  </div>
+<div class="card">
+  <h3>Fundraising Logo Design</h3>
+  <img src="Picture14.png">
+  <img src="Picture15.png">
+  <p>Created simple and recognizable branding for fundraising initiative.</p>
+  <span class="tag">Canva • Branding</span>
+</div>
 </section>
   
 <section>
@@ -331,41 +304,42 @@ footer {
   <p>© 2026 Varnhikaa</p>
 </footer>
 
-<div id="img1" class="modal"><img src="Picture2.png"></div>
-<div id="img2" class="modal"><img src="Picture8.png"></div>
-<div id="img3" class="modal"><img src="Picture6.png"></div>
-<div id="img4" class="modal"><img src="Picture7.png"></div>
-<div id="img5" class="modal"><img src="Picture5.png"></div>
-<div id="img6" class="modal"><img src="Picture1.png"></div>
-<div id="img7" class="modal"><img src="Picture3.png"></div>
-<div id="img8" class="modal"><img src="Picture4.png"></div>
-<div id="img9" class="modal"><img src="Picture9.png"></div>
-<div id="img10" class="modal"><img src="Picture10.png"></div>
-<div id="img11" class="modal"><img src="Picture11.png"></div>
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 
-<div id="img27" class="modal"><img src="Picture27.png"></div>
-<div id="img28" class="modal"><img src="Picture28.png"></div>
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
 
-<div id="img23" class="modal"><img src="Picture23.png"></div>
-<div id="img22" class="modal"><img src="Picture22.png"></div>
+// Attach click event to ALL images inside cards
+document.querySelectorAll(".card img").forEach(img => {
+  img.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+});
 
-<div id="img20" class="modal"><img src="Picture20.png"></div>
-<div id="img21" class="modal"><img src="Picture21.png"></div>
+// Close when clicking X
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
 
-<div id="img18" class="modal"><img src="Picture18.png"></div>
-<div id="img19" class="modal"><img src="Picture19.png"></div>
+// Close when clicking outside image
+modal.onclick = function(e) {
+  if (e.target !== modalImg) {
+    modal.style.display = "none";
+  }
+}
 
-<div id="img12" class="modal"><img src="Picture12.png"></div>
-<div id="img13" class="modal"><img src="Picture13.png"></div>
-
-<div id="img24" class="modal"><img src="Picture24.png"></div>
-<div id="img25" class="modal"><img src="Picture25.png"></div>
-<div id="img26" class="modal"><img src="Picture26.png"></div>
-
-<div id="img16" class="modal"><img src="Picture16.png"></div>
-
-<div id="img14" class="modal"><img src="Picture14.png"></div>
-<div id="img15" class="modal"><img src="Picture15.png"></div>
-
+// Close with ESC key
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    modal.style.display = "none";
+});
+</script>
+  
 </body>
 </html>

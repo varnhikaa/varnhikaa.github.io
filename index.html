@@ -1,118 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Varnhikaa | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varnhikaa | Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
 
-    body {
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
+body {
+  background: #f5f7fa;
+  color: #333;
+}
 
-    header {
-      padding: 60px 20px;
-      text-align: center;
-      background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
-      color: white;
-    }
+header {
+  padding: 70px 20px;
+  text-align: center;
+  background: radial-gradient(circle at -1% 57.5%, rgb(19,170,82) 0%, rgb(0,102,43) 90%);
+  color: white;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+header h1 {
+  font-size: 2.5rem;
+}
 
-    header p {
-      opacity: 0.9;
-    }
+header p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
 
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
 
-    h2 {
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
+h2 {
+  margin-bottom: 20px;
+}
 
-    .about {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+.about, .contact {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+.card:hover {
+  transform: translateY(-6px);
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 
-    .tag {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 4px 10px;
-      background: #c9f2c7ff;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
+.card h3 {
+  margin-bottom: 10px;
+}
 
-    .contact {
-      text-align: center;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
+.tag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #c9f2c7;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
 
-    a {
-      color: #629460ff;
-      text-decoration: none;
-    }
+a {
+  color: #2f7d32;
+  text-decoration: none;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal:target {
+  display: block;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>Varnhikaa A/P Veeran</h1>
-  <p>UI/UX Designer • Full-stack Developer</p>
+  <p>UI/UX Designer • Full-Stack Developer</p>
 </header>
 
 <section>
@@ -120,7 +144,7 @@
   <div class="about">
     <p>
       Motivated IT student with a strong interest in UI/UX design and front-end development.
-      Passionate about creating intuitive and user-focused digital experiences.
+      Passionate about creating intuitive, user-focused digital experiences.
     </p>
   </div>
 </section>
@@ -129,37 +153,58 @@
   <h2>Projects</h2>
   <div class="projects">
 
+    <!-- GrowVIE -->
+    <div class="card">
+      <h3>GrowVIE</h3>
+
+      <a href="#img1"><img src="Picture2.png"></a>
+      <a href="#img2"><img src="Picture8.png"></a>
+
+      <p>Interactive web application promoting sustainability through gamified environmental actions.</p>
+      <span class="tag">HTML • CSS • JS</span>
+    </div>
+
+    <!-- Persona -->
+    <div class="card">
+      <h3>User Persona Development</h3>
+
+      <a href="#img3"><img src="Picture6.png"></a>
+      <a href="#img4"><img src="Picture7.png"></a>
+
+      <p>Conducted user research and developed personas to guide design decisions.</p>
+      <span class="tag">UI/UX</span>
+    </div>
+
+    <!-- UIUX -->
+    <div class="card">
+      <h3>UI/UX Website Redesign</h3>
+
+      <a href="#img5"><img src="Picture5.png"></a>
+      <a href="#img6"><img src="Picture1.png"></a>
+
+      <p>Redesigned a website to improve usability, layout, and visual identity.</p>
+      <p><a href="https://www.figma.com/proto/r8VPSAFFF6r9yaz5Icp4YT/Discount-Beds-Belfast---high-fidelity--Copy-?node-id=0-1&t=OraUeji36ttShCab-1" target="_blank">View Prototype</a></p>
+      <span class="tag">UI/UX • Figma</span>
+    </div>
+
     <div class="card">
       <h3>Tuition Management System</h3>
-      <img src="Picture3.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <img src="Picture4.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <p>Java-based system for managing schedules, profiles, and payments with chat and reporting features.</p>
+
+      <a href="#img7"><img src="Picture3.png"></a>
+      <a href="#img8"><img src="Picture4.png"></a>
+
+      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
       <span class="tag">Java</span>
     </div>
 
     <div class="card">
-      <h3>Growvie</h3>
-      <img src="Picture2.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <img src="Picture8.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <p>Interactive web app promoting sustainability through gamified environmental actions.</p>
-      <span class="tag">HTML • CSS • JS</span>
-    </div>
+      <h3>Tuition Management System</h3>
 
-    <div class="card">
-      <h3>User Persona Development</h3>
-      <img src="Picture6.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <img src="Picture7.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <p>Conducted survey on potential users to identify user personas</p>
-      <span class="tag">UI/UX</span>
-    </div>
+      <a href="#img7"><img src="Picture3.png"></a>
+      <a href="#img8"><img src="Picture4.png"></a>
 
-    <div class="card">
-      <h3>UI/UX Website Redesign</h3>
-      <img src="Picture5.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <img src="Picture1.png" style="width:100%; border-radius:10px; margin-bottom:10px;">
-      <p>Redesigned a website with improved usability, layout, and visual identity.</p>
-      <p><a href="https://www.figma.com/proto/r8VPSAFFF6r9yaz5Icp4YT/Discount-Beds-Belfast---high-fidelity--Copy-?node-id=0-1&t=OraUeji36ttShCab-1">View Redesigned Prototype</a></p>
-      <span class="tag">UI/UX</span>
+      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
+      <span class="tag">Java</span>
     </div>
 
   </div>
@@ -168,14 +213,23 @@
 <section>
   <h2>Contact</h2>
   <div class="contact">
-    <p>Email: varnhikaa.veer@email.com</p>
-    <p>GitHub: <a href="https://github.com/varnhikaa">varnhikaa</a></p>
+    <p>Email: varnhikaa.veer@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/varnhikaa" target="_blank">varnhikaa</a></p>
   </div>
 </section>
 
 <footer>
   <p>© 2026 Varnhikaa</p>
 </footer>
+
+<div id="img1" class="modal"><img src="Picture2.png"></div>
+<div id="img2" class="modal"><img src="Picture8.png"></div>
+<div id="img3" class="modal"><img src="Picture6.png"></div>
+<div id="img4" class="modal"><img src="Picture7.png"></div>
+<div id="img5" class="modal"><img src="Picture5.png"></div>
+<div id="img6" class="modal"><img src="Picture1.png"></div>
+<div id="img7" class="modal"><img src="Picture3.png"></div>
+<div id="img8" class="modal"><img src="Picture4.png"></div>
 
 </body>
 </html>

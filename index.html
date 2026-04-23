@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Varnhikaa | Portfolio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -20,7 +19,6 @@ body {
   color: #333;
 }
 
-/* HEADER */
 header {
   padding: 70px 20px;
   text-align: center;
@@ -28,7 +26,15 @@ header {
   color: white;
 }
 
-/* SECTIONS */
+header h1 {
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
 section {
   max-width: 1000px;
   margin: 50px auto;
@@ -39,7 +45,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* CARDS */
 .about, .contact {
   background: white;
   padding: 25px;
@@ -59,43 +64,50 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
-.card h3 {
-  margin-bottom: 15px;
-}
-
-/* IMAGE GRID (uniform size) */
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.image-grid img {
+/* Keeps card sizes uniform */
+.image-container {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  margin-bottom: 15px;
+  overflow: hidden;
   border-radius: 10px;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   cursor: pointer;
 }
 
-/* TAGS */
+/* Hide extra images in the card view */
+.card img:not(:first-child) {
+  display: none;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
 .tag {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: auto;
   padding: 5px 10px;
   background: #c9f2c7;
   border-radius: 6px;
   font-size: 0.8rem;
+  align-self: flex-start;
 }
 
-/* LINKS */
 a {
   color: #2f7d32;
   text-decoration: none;
@@ -105,38 +117,66 @@ a:hover {
   text-decoration: underline;
 }
 
-/* MODAL */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #777;
+}
+
+/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
-  display: block;
-  margin: 80px auto;
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
+  max-width: 85%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .close {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: white;
-  font-size: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
+/* Arrow Buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.3s ease;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.next { right: 20px; }
+.prev { left: 20px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 </style>
 </head>
@@ -148,27 +188,19 @@ footer {
   <p>UI/UX Designer • Full-Stack Developer</p>
 </header>
 
-<!-- ABOUT -->
 <section>
   <h2>About Me</h2>
   <div class="about">
-    <p>
-      Motivated IT student with a strong interest in UI/UX design and front-end development.
-      Passionate about creating intuitive, user-focused digital experiences.
-      Experienced in developing web applications, designing user interfaces, and producing creative digital content.
-      Eager to apply technical and design skills in a real-world environment while continuously learning and improving.
-    </p>
+    <p>Motivated IT student with a strong interest in UI/UX design and front-end development. Passionate about creating intuitive, user-focused digital experiences.</p>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section>
   <h2>Projects</h2>
   <div class="projects">
-
     <div class="card">
-      <h3>Growvie</h3>
-      <div class="image-grid">
+      <h3>GrowVIE</h3>
+      <div class="image-container">
         <img src="Picture2.png">
         <img src="Picture8.png">
       </div>
@@ -178,7 +210,7 @@ footer {
 
     <div class="card">
       <h3>User Persona Development</h3>
-      <div class="image-grid">
+      <div class="image-container">
         <img src="Picture6.png">
         <img src="Picture7.png">
       </div>
@@ -188,47 +220,44 @@ footer {
 
     <div class="card">
       <h3>UI/UX Website Redesign</h3>
-      <div class="image-grid">
+      <div class="image-container">
         <img src="Picture5.png">
         <img src="Picture1.png">
       </div>
       <p>Redesigned a website to improve usability, layout, and visual identity.</p>
-      <p><a href="https://www.figma.com/" target="_blank">View Prototype</a></p>
+      <p><a href="https://www.figma.com/proto/r8VPSAFFF6r9yaz5Icp4YT/Discount-Beds-Belfast---high-fidelity--Copy-?node-id=0-1&t=OraUeji36ttShCab-1" target="_blank">View Prototype</a></p>
       <span class="tag">UI/UX • Figma</span>
     </div>
 
     <div class="card">
       <h3>Tuition Management System</h3>
-      <div class="image-grid">
+      <div class="image-container">
         <img src="Picture3.png">
         <img src="Picture4.png">
       </div>
-      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
+      <p>Java-based system for managing student data, schedules, and payments.</p>
       <span class="tag">Java</span>
     </div>
-
   </div>
 </section>
 
-<!-- CREATIVE -->
 <section>
   <h2>Creative Works</h2>
   <div class="projects">
-
     <div class="card">
       <h3>Freelance Poster Design</h3>
-      <div class="image-grid">
+      <div class="image-container">
         <img src="Picture9.png">
         <img src="Picture10.png">
         <img src="Picture11.png">
       </div>
-      <p>Designed promotional posters for an international primary school science competition, focusing on clarity and visual appeal.</p>
+      <p>Designed promotional posters for an international primary school science competition.</p>
       <span class="tag">Canva • Design</span>
     </div>
 
     <div class="card">
       <h3>Freelance Brochure Design</h3>
-      <div class="image-grid">
+      <div class="image-container">
         <img src="Picture27.png">
         <img src="Picture28.png">
       </div>
@@ -238,44 +267,82 @@ footer {
 
     <div class="card">
       <h3>ICN Poster Design</h3>
-      <div class="image-grid">
-        <img src="Picture23.png">
-      </div>
+      <div class="image-container"><img src="Picture23.png"></div>
       <p>Designed promotional materials for event marketing and audience engagement.</p>
       <span class="tag">Canva</span>
     </div>
 
     <div class="card">
       <h3>Marketing GIF</h3>
-      <div class="image-grid">
-        <img src="Picture22.gif">
-      </div>
-      <p>Developed animated marketing content to enhance engagement across platforms.</p>
+      <div class="image-container"><img src="Picture22.gif"></div>
+      <p>Developed animated marketing content to enhance engagement.</p>
       <span class="tag">Canva • GIF</span>
     </div>
 
     <div class="card">
       <h3>Social Media Design – Serena Williams</h3>
-      <div class="image-grid">
-        <img src="Picture20.png">
-      </div>
-      <p>Designed impactful content highlighting achievements and visual storytelling.</p>
+      <div class="image-container"><img src="Picture20.png"></div>
+      <p>Designed impactful content highlighting achievements.</p>
       <span class="tag">Canva • Social Media</span>
     </div>
 
     <div class="card">
       <h3>Social Media Design – Wangari Maathai</h3>
-      <div class="image-grid">
-        <img src="Picture21.png">
-      </div>
-      <p>Created awareness-focused visual content using strong messaging and layout.</p>
+      <div class="image-container"><img src="Picture21.png"></div>
+      <p>Created awareness-focused visual content using strong messaging.</p>
       <span class="tag">Canva • Social Media</span>
     </div>
 
+    <div class="card">
+      <h3>Social Media Design (General)</h3>
+      <div class="image-container">
+        <img src="Picture18.png">
+        <img src="Picture19.png">
+      </div>
+      <p>Produced engaging social media posts to support campaigns.</p>
+      <span class="tag">Canva</span>
+    </div>
+
+    <div class="card">
+      <h3>Digital Calendar (2026)</h3>
+      <div class="image-container">
+        <img src="Picture12.png">
+        <img src="Picture13.png">
+      </div>
+      <p>Designed two versions of a digital calendar for fundraising.</p>
+      <span class="tag">Canva • Product Design</span>
+    </div>
+
+    <div class="card">
+      <h3>Logo Redesign & Branding</h3>
+      <div class="image-container">
+        <img src="Picture24.png">
+        <img src="Picture25.png">
+        <img src="Picture26.png">
+      </div>
+      <p>Redesigned branding elements to improve identity consistency.</p>
+      <span class="tag">UI/UX • Branding</span>
+    </div>
+
+    <div class="card">
+      <h3>Fundraising Menu Poster</h3>
+      <div class="image-container"><img src="Picture16.png"></div>
+      <p>Designed menu poster with clear structure and pricing layout.</p>
+      <span class="tag">Canva</span>
+    </div>
+
+    <div class="card">
+      <h3>Fundraising Logo Design</h3>
+      <div class="image-container">
+        <img src="Picture14.png">
+        <img src="Picture15.png">
+      </div>
+      <p>Created simple and recognizable branding for fundraising.</p>
+      <span class="tag">Canva • Branding</span>
+    </div>
   </div>
 </section>
-
-<!-- CONTACT -->
+  
 <section>
   <h2>Contact</h2>
   <div class="contact">
@@ -288,34 +355,74 @@ footer {
   <p>© 2026 Varnhikaa</p>
 </footer>
 
-<!-- MODAL -->
-<div id="modal" class="modal">
+<div id="imageModal" class="modal">
   <span class="close">&times;</span>
-  <img id="modalImg" class="modal-content">
+  <a class="prev">&#10094;</a>
+  <img class="modal-content" id="modalImg">
+  <a class="next">&#10095;</a>
 </div>
 
 <script>
-const modal = document.getElementById("modal");
+let currentImages = [];
+let currentIndex = 0;
+
+const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-document.querySelectorAll(".image-grid img").forEach(img => {
-  img.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
+// Open Modal and load all images from that specific card
+document.querySelectorAll(".card").forEach(card => {
+  const imgs = Array.from(card.querySelectorAll("img"));
+  
+  imgs.forEach((img, index) => {
+    img.onclick = function() {
+      currentImages = imgs.map(i => i.src);
+      currentIndex = index;
+      updateModalImage();
+      modal.style.display = "flex";
+    }
+  });
+});
+
+function updateModalImage() {
+  modalImg.src = currentImages[currentIndex];
+  // Hide arrows if only one image exists
+  prevBtn.style.display = currentImages.length > 1 ? "block" : "none";
+  nextBtn.style.display = currentImages.length > 1 ? "block" : "none";
+}
+
+nextBtn.onclick = function(e) {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  updateModalImage();
+}
+
+prevBtn.onclick = function(e) {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  updateModalImage();
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+modal.onclick = function(e) {
+  if (e.target === modal || e.target === closeBtn) {
+    modal.style.display = "none";
+  }
+}
+
+document.addEventListener("keydown", function(e) {
+  if (modal.style.display === "flex") {
+    if (e.key === "ArrowRight") nextBtn.onclick(e);
+    if (e.key === "ArrowLeft") prevBtn.onclick(e);
+    if (e.key === "Escape") modal.style.display = "none";
   }
 });
-
-closeBtn.onclick = () => modal.style.display = "none";
-
-modal.onclick = (e) => {
-  if (e.target !== modalImg) modal.style.display = "none";
-};
-
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") modal.style.display = "none";
-});
 </script>
-
+  
 </body>
 </html>

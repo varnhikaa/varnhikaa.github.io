@@ -66,10 +66,29 @@ h2 {
   transition: 0.2s;
   display: flex;
   flex-direction: column;
+  /* This is the magic line: it adds 15px of space between everything */
+  gap: 15px; 
 }
 
 .card:hover {
   transform: translateY(-6px);
+}
+
+/* Reset margins since gap is handling the spacing now */
+.card h3, .card p, .image-container {
+  margin-bottom: 0;
+}
+
+.tag {
+  display: inline-block;
+  /* Internal padding so the text isn't touching the green edges */
+  padding: 6px 12px; 
+  background: #c9f2c7;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  /* Keeps the tag at the bottom even if descriptions vary in length */
+  margin-top: auto; 
+  align-self: flex-start;
 }
 
 /* Keeps card sizes uniform */

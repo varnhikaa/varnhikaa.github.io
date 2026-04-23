@@ -20,6 +20,7 @@ body {
   color: #333;
 }
 
+/* HEADER */
 header {
   padding: 70px 20px;
   text-align: center;
@@ -27,12 +28,18 @@ header {
   color: white;
 }
 
+/* SECTIONS */
 section {
   max-width: 1000px;
   margin: 50px auto;
   padding: 0 20px;
 }
 
+h2 {
+  margin-bottom: 20px;
+}
+
+/* CARDS */
 .about, .contact {
   background: white;
   padding: 25px;
@@ -51,17 +58,26 @@ section {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s;
 }
 
-.slider {
-  position: relative;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.slide {
-  display: none;
+.card h3 {
+  margin-bottom: 15px;
 }
 
-.slide img {
+/* IMAGE GRID (uniform size) */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.image-grid img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -69,25 +85,7 @@ section {
   cursor: pointer;
 }
 
-.active {
-  display: block;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
+/* TAGS */
 .tag {
   display: inline-block;
   margin-top: 10px;
@@ -97,13 +95,17 @@ section {
   font-size: 0.8rem;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
+/* LINKS */
+a {
+  color: #2f7d32;
+  text-decoration: none;
 }
 
-/* Modal */
+a:hover {
+  text-decoration: underline;
+}
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -118,6 +120,7 @@ footer {
   margin: 80px auto;
   max-width: 90%;
   max-height: 80%;
+  border-radius: 10px;
 }
 
 .close {
@@ -127,6 +130,13 @@ footer {
   color: white;
   font-size: 30px;
   cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
 }
 </style>
 </head>
@@ -138,174 +148,139 @@ footer {
   <p>UI/UX Designer • Full-Stack Developer</p>
 </header>
 
+<!-- ABOUT -->
+<section>
+  <h2>About Me</h2>
+  <div class="about">
+    <p>
+      Motivated IT student with a strong interest in UI/UX design and front-end development.
+      Passionate about creating intuitive, user-focused digital experiences.
+      Experienced in developing web applications, designing user interfaces, and producing creative digital content.
+      Eager to apply technical and design skills in a real-world environment while continuously learning and improving.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
 <section>
   <h2>Projects</h2>
   <div class="projects">
 
-    <!-- GrowVIE -->
     <div class="card">
-      <h3>GrowVIE</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture2.png"></div>
-        <div class="slide"><img src="Picture8.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <h3>Growvie</h3>
+      <div class="image-grid">
+        <img src="Picture2.png">
+        <img src="Picture8.png">
       </div>
-      <p>Interactive web app promoting sustainability through gamified actions.</p>
+      <p>Interactive web application promoting sustainability through gamified environmental actions.</p>
       <span class="tag">HTML • CSS • JS</span>
     </div>
 
-    <!-- Persona -->
     <div class="card">
       <h3>User Persona Development</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture6.png"></div>
-        <div class="slide"><img src="Picture7.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <div class="image-grid">
+        <img src="Picture6.png">
+        <img src="Picture7.png">
       </div>
-      <p>Conducted research and built personas to guide design decisions.</p>
+      <p>Conducted user research and developed personas to guide design decisions.</p>
       <span class="tag">UI/UX</span>
     </div>
 
-    <!-- UIUX -->
     <div class="card">
       <h3>UI/UX Website Redesign</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture5.png"></div>
-        <div class="slide"><img src="Picture1.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <div class="image-grid">
+        <img src="Picture5.png">
+        <img src="Picture1.png">
       </div>
-      <p>Redesigned a website to improve usability and layout.</p>
+      <p>Redesigned a website to improve usability, layout, and visual identity.</p>
+      <p><a href="https://www.figma.com/" target="_blank">View Prototype</a></p>
       <span class="tag">UI/UX • Figma</span>
     </div>
 
-    <!-- Tuition -->
     <div class="card">
       <h3>Tuition Management System</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture3.png"></div>
-        <div class="slide"><img src="Picture4.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <div class="image-grid">
+        <img src="Picture3.png">
+        <img src="Picture4.png">
       </div>
-      <p>Java system managing schedules, payments, and reporting.</p>
+      <p>Java-based system for managing student data, schedules, and payments with reporting features.</p>
       <span class="tag">Java</span>
     </div>
 
   </div>
 </section>
 
+<!-- CREATIVE -->
 <section>
   <h2>Creative Works</h2>
   <div class="projects">
 
-    <!-- Freelance Poster -->
     <div class="card">
       <h3>Freelance Poster Design</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture9.png"></div>
-        <div class="slide"><img src="Picture10.png"></div>
-        <div class="slide"><img src="Picture11.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <div class="image-grid">
+        <img src="Picture9.png">
+        <img src="Picture10.png">
+        <img src="Picture11.png">
       </div>
-      <p>Promotional posters for an international science competition.</p>
+      <p>Designed promotional posters for an international primary school science competition, focusing on clarity and visual appeal.</p>
       <span class="tag">Canva • Design</span>
     </div>
 
-    <!-- Brochure -->
     <div class="card">
       <h3>Freelance Brochure Design</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture27.png"></div>
-        <div class="slide"><img src="Picture28.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
+      <div class="image-grid">
+        <img src="Picture27.png">
+        <img src="Picture28.png">
       </div>
-      <p>Informative brochure design with structured layout.</p>
+      <p>Created informative brochures with structured layout and engaging visuals.</p>
       <span class="tag">Canva • Layout</span>
     </div>
 
-    <!-- ICN Poster -->
     <div class="card">
       <h3>ICN Poster Design</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture23.png"></div>
+      <div class="image-grid">
+        <img src="Picture23.png">
       </div>
-      <p>Event promotional material.</p>
+      <p>Designed promotional materials for event marketing and audience engagement.</p>
       <span class="tag">Canva</span>
     </div>
 
-    <!-- GIF -->
     <div class="card">
       <h3>Marketing GIF</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture22.gif"></div>
+      <div class="image-grid">
+        <img src="Picture22.gif">
       </div>
-      <p>Animated marketing content.</p>
+      <p>Developed animated marketing content to enhance engagement across platforms.</p>
       <span class="tag">Canva • GIF</span>
     </div>
 
-    <!-- Social -->
     <div class="card">
-      <h3>Social Media – Serena Williams</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture20.png"></div>
+      <h3>Social Media Design – Serena Williams</h3>
+      <div class="image-grid">
+        <img src="Picture20.png">
       </div>
-      <p>Visual storytelling design.</p>
-      <span class="tag">Canva</span>
+      <p>Designed impactful content highlighting achievements and visual storytelling.</p>
+      <span class="tag">Canva • Social Media</span>
     </div>
 
     <div class="card">
-      <h3>Social Media – Wangari Maathai</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture21.png"></div>
+      <h3>Social Media Design – Wangari Maathai</h3>
+      <div class="image-grid">
+        <img src="Picture21.png">
       </div>
-      <p>Awareness-based content design.</p>
-      <span class="tag">Canva</span>
+      <p>Created awareness-focused visual content using strong messaging and layout.</p>
+      <span class="tag">Canva • Social Media</span>
     </div>
 
-    <div class="card">
-      <h3>Social Media (General)</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture18.png"></div>
-        <div class="slide"><img src="Picture19.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
-      </div>
-      <p>Engaging social media visuals.</p>
-      <span class="tag">Canva</span>
-    </div>
+  </div>
+</section>
 
-    <!-- Calendar -->
-    <div class="card">
-      <h3>Digital Calendar</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture12.png"></div>
-        <div class="slide"><img src="Picture13.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
-      </div>
-      <p>Fundraising calendar design.</p>
-      <span class="tag">Canva</span>
-    </div>
-
-    <!-- Branding -->
-    <div class="card">
-      <h3>Logo & Branding</h3>
-      <div class="slider">
-        <div class="slide active"><img src="Picture24.png"></div>
-        <div class="slide"><img src="Picture25.png"></div>
-        <div class="slide"><img src="Picture26.png"></div>
-        <button class="prev" onclick="moveSlide(this, -1)">❮</button>
-        <button class="next" onclick="moveSlide(this, 1)">❯</button>
-      </div>
-      <p>Brand identity redesign.</p>
-      <span class="tag">UI/UX</span>
-    </div>
-
+<!-- CONTACT -->
+<section>
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Email: varnhikaa.veer@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/varnhikaa" target="_blank">varnhikaa</a></p>
   </div>
 </section>
 
@@ -313,28 +288,18 @@ footer {
   <p>© 2026 Varnhikaa</p>
 </footer>
 
-<!-- Modal -->
+<!-- MODAL -->
 <div id="modal" class="modal">
   <span class="close">&times;</span>
   <img id="modalImg" class="modal-content">
 </div>
 
 <script>
-function moveSlide(btn, direction) {
-  const slider = btn.parentElement;
-  const slides = slider.querySelectorAll(".slide");
-  let index = Array.from(slides).findIndex(s => s.classList.contains("active"));
-
-  slides[index].classList.remove("active");
-  index = (index + direction + slides.length) % slides.length;
-  slides[index].classList.add("active");
-}
-
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.querySelector(".close");
 
-document.querySelectorAll(".slide img").forEach(img => {
+document.querySelectorAll(".image-grid img").forEach(img => {
   img.onclick = function() {
     modal.style.display = "block";
     modalImg.src = this.src;
@@ -342,9 +307,14 @@ document.querySelectorAll(".slide img").forEach(img => {
 });
 
 closeBtn.onclick = () => modal.style.display = "none";
+
 modal.onclick = (e) => {
   if (e.target !== modalImg) modal.style.display = "none";
 };
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") modal.style.display = "none";
+});
 </script>
 
 </body>
